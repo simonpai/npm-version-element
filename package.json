@@ -1,0 +1,33 @@
+{
+  "name": "npm-version-element",
+  "type": "module",
+  "description": "Provide a custom element to display the version of a package on npm.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "start": "rollup -w -c rollup.config.dev.js",
+    "build:clean": "npx rimraf dist",
+    "build:umd": "GIT_HASH=$(git rev-parse ${GITHUB_SHA:-HEAD}) rollup -c",
+    "build": "npm run build:clean && npm run build:umd",
+    "purge-cdn": "curl https://purge.jsdelivr.net/npm/npm-version-element@${TAG:-latest}"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonpai/npm-version-element.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonpai/npm-version-element/issues"
+  },
+  "homepage": "https://github.com/simonpai/npm-version-element#readme",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-terser": "^0.3.0",
+    "rimraf": "^4.0.4",
+    "rollup": "^3.10.0",
+    "rollup-plugin-serve": "^2.0.2"
+  }
+}
