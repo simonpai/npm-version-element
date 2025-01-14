@@ -1,4 +1,4 @@
-import { fetchNpmVersion } from './npm.js';
+import { fetchPackageVersion } from './npm.js';
 
 export default class NpmVersionElement extends HTMLElement {
 
@@ -20,7 +20,7 @@ export default class NpmVersionElement extends HTMLElement {
     const packageName = this.getAttribute('package') || undefined;
     const tag = this.getAttribute('tag') || undefined;
     const format = this.getAttribute('format') || '$';
-    const value = packageName ? await fetchNpmVersion(packageName, { tag }) : '';
+    const value = packageName ? await fetchPackageVersion(packageName, { tag }) : '';
     this.innerHTML = format.replace('$', value);
   }
 

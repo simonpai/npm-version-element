@@ -7,7 +7,7 @@ export const BASE = {
   input: 'src/index.js',
   output: {
     file: 'dist/npm-version-element.js',
-    format: 'umd',
+    format: 'iife',
     indent: false,
   },
 };
