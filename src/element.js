@@ -3,7 +3,7 @@ import { fetchPackageVersion } from './npm.js';
 export default class NpmVersionElement extends HTMLElement {
 
   static get observedAttributes() {
-    return ['package', 'tag'];
+    return ['package', 'tag', 'format'];
   }
 
   connectedCallback() {

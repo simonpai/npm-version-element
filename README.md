@@ -16,7 +16,7 @@ The element will display the latest version of the specified package.
 
 ## More options
 
-You can specify the tag:
+Specify a tag:
 
 ```html
 <npm-version package="npm-version-element" tag="beta"></npm-version>
@@ -26,4 +26,11 @@ Provide a fallback value:
 
 ```html
 <npm-version package="npm-version-element">latest</npm-version>
+```
+
+Specify a format:
+
+```html
+<npm-version package="npm-version-element" format="v$"></npm-version>
+<!-- will be v1.0.0 -->
 ```
