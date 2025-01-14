@@ -13,7 +13,7 @@ jobs:
         id: version
         run: |
           VERSION=${{ github.event.release.tag_name }}
-          echo "::set-output name=version::$(echo $VERSION | sed -e 's/v//gI')"
+          echo "version=$(echo $VERSION | sed -e 's/v//gI')" >> $GITHUB_OUTPUT
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
@@ -22,6 +22,7 @@ jobs:
       - run: npm install
       - run: git config --global user.name "${{ github.actor }}"
       - run: git config --global user.email "github-action-${{ github.actor }}@users.noreply.github.com"
+      - run: npm run version ${{ steps.version.outputs.version }}
       - run: npm run build
       - run: npm publish
         if: "!github.event.release.prerelease"
