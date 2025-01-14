@@ -5,6 +5,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "dist"
+  ],
   "main": "src/index.js",
   "scripts": {
     "version": "node ./bin/version.js",
@@ -18,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/simonpai/npm-version-element.git"
   },
-  "author": "",
+  "author": "simon.pai@gmail.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/simonpai/npm-version-element/issues"

@@ -1,6 +1,5 @@
 # generated
 node_modules/
-dist/
 package-lock.json
 
 # env
@@ -13,5 +12,3 @@ npm-debug.log*
 # cache
 .npm
 .eslintcache
-
-.DS_Store
